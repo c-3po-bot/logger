@@ -33,7 +33,7 @@ function log(type, content) {
     switch (type) {
       case Level.ERROR: {
         console.error(`${getTimeStamp(Date.now())} ${chalk.bgRed(type.toUpperCase())} ${content}`);
-        console.error(content)
+        if(content?.stack) console.error(content)
         return
       }
       case Level.WARN: {
